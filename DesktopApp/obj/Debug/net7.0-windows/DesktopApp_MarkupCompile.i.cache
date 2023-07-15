@@ -1,0 +1,20 @@
+﻿DesktopApp
+1.0.0.0
+
+winexe
+C#
+.cs
+D:\Git collaborate\GUIProjectConverted\DesktopApp\obj\Debug\net7.0-windows\
+DesktopApp
+none
+false
+TRACE;DEBUG;NET;NET7_0;NETCOREAPP
+D:\Git collaborate\GUIProjectConverted\DesktopApp\App.xaml
+81099320636
+
+13808867817
+219-529723445
+DataFormWindow.xaml;MainWindow.xaml;MVVM\View\MyOption.xaml;MVVM\View\MyTextBox.xaml;Theme\DataFormTheme.xaml;Theme\DeptButtonTheme.xaml;Theme\MainWindowTheme.xaml;Theme\StudentDataTheme.xaml;
+
+False
+

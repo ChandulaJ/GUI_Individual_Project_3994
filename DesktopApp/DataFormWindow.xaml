@@ -1,0 +1,191 @@
+﻿<Window x:Class="DesktopApp.DataFormWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:uc="clr-namespace:DesktopApp.MVVM.View"
+         xmlns:uc1="clr-namespace:DesktopApp"
+        xmlns:viewmodel="clr-namespace:DesktopApp.MVVM.ViewModel"
+        mc:Ignorable="d"
+        Title="DataFormWindow" Height="700" Width="1000"
+        Background="Transparent"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True">
+
+    <Window.DataContext>
+        <viewmodel:DataFormViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <!--Left section-->
+
+        <Border Background="#89cff0"
+            Padding="30"
+            CornerRadius="25 0 0 25">
+            <StackPanel VerticalAlignment="Center">
+                <Image x:Name="MyImage" Source="{Binding ImageSource}" Width="160" Height="160" Margin="0 0 0 40" />
+                <TextBlock Text="Enter Student Details" TextAlignment="Center" FontWeight="SemiBold" FontSize="28" Foreground="#363636"/>
+                <Button Style="{StaticResource buttonBlack}">
+                    <fa:ImageAwesome Icon="AngleRight" Width="25" Height="25" Foreground="#ffd500" Margin="3 0 0 0"/>
+
+                </Button>
+            </StackPanel>
+        </Border>
+
+
+        <!--Input section-->
+
+        <Border Grid.Column="1" Padding="20" Background="#ffffff" CornerRadius="0 25 25 0" MouseDown="Border_MouseDown" >
+            <Grid>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Right"
+                        Orientation="Horizontal">
+
+                    <Button Width="20"
+                        Height="20"
+                        Content="✖"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Foreground="Gray"
+                        Margin="0 0 10 0"
+                            Command="{Binding DataFormCloseCommand}"
+                       />
+
+                </StackPanel>
+
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 10 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Text="Student ID" Style="{StaticResource text}"/>
+                    <TextBlock Grid.Row="1" Text="First Name" Style="{StaticResource text}"/>
+                    <TextBlock Grid.Row="2" Text="Last Name" Style="{StaticResource text}"/>
+                    <TextBlock Grid.Row="3" Text="Date of Birth" Style="{StaticResource text}"/>
+                    <TextBlock Grid.Row="4" Text="Department" Style="{StaticResource text}"/>
+                    <TextBlock Grid.Row="5" Text="Year" Style="{StaticResource text}"/>
+                    <TextBlock Grid.Row="6" Text="GPA" Style="{StaticResource text}"/>
+                    <TextBlock Grid.Row="7" Text="Photo" Style="{StaticResource text}"/>
+
+
+
+
+                    <uc:MyTextBox x:Name="fnameInput" Grid.Column="1" Grid.Row="1" HintText="{Binding HintFirstNameIn, Mode=TwoWay}" Text="{Binding FirstNameIn, Mode=TwoWay}"/>
+                    <uc:MyTextBox x:Name="lnameInput" Grid.Column="1" Grid.Row="2" HintText="{Binding HintLastNameIn, Mode=TwoWay}" Text="{Binding LastNameIn, Mode=TwoWay}"/>
+                    <DatePicker x:Name="dateInput" Grid.Column="1" Margin="0 20 0 0" BorderThickness="0" Grid.Row="3" Text="{Binding DOBIn, Mode=TwoWay}" />
+
+
+
+                    <uc:MyTextBox x:Name="dobInput" Margin ="0 0 30 0" Grid.Column="1" Grid.Row="3" HintText="{Binding HintDOBIn, Mode=TwoWay}" Text="{Binding DOBIn, Mode=TwoWay}" />
+
+                    <uc:MyTextBox x:Name="yearInput" Grid.Column="1" Grid.Row="5" HintText="{Binding HintYearIn, Mode=TwoWay}" Text="{Binding YearIn, Mode=TwoWay}"/>
+                    <uc:MyTextBox x:Name="gpaInput" Grid.Column="1" Grid.Row="6" HintText="{Binding HintGPAIn, Mode=TwoWay}" Text="{Binding GPAIn, Mode=TwoWay}"/>
+                    <Button x:Name="UploadButton" Content="Choose a file" Grid.Column="1" Grid.Row="7" Style="{StaticResource buttonMain}" Command="{Binding SelectImageCommand}" CommandParameter="{Binding ElementName=MyImage}" Cursor="Hand" />
+
+
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="4" Margin="0 10">
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+
+                            <RadioButton IsChecked="{Binding IsElecDept}" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0" Style="{StaticResource CircularRadioButtonStyle }" 
+                                
+                                 Command="{Binding ElecDeptCommand}"
+                                         Margin="20 10 20 10" Cursor="Arrow">
+                                <fa:ImageAwesome Icon="plug" Width="15" Height="15" Foreground="White"/>
+
+                            </RadioButton>
+
+                            <RadioButton IsChecked="{Binding IsComDept}" Grid.Column="1" Grid.Row="0" Style="{StaticResource CircularRadioButtonStyle}"
+                                
+                                 Command="{Binding ComDeptCommand}"
+                                         Margin="20 10 20 10">
+                                <fa:ImageAwesome Icon="Laptop" Width="15" Height="15" Foreground="White"/>
+                            </RadioButton>
+
+                            <RadioButton IsChecked="{Binding IsMarineDept}" Grid.Column="2" Grid.Row="0" Style="{StaticResource CircularRadioButtonStyle}"
+                               
+                                 Command="{Binding MarineDeptCommand}"
+                                         Margin="20 10 20 10">
+                                <fa:ImageAwesome Icon="Anchor" Width="15" Height="15" Foreground="White"/>
+                            </RadioButton>
+
+
+
+                            <RadioButton IsChecked="{Binding IsMechaDept}" Grid.Column="3" Grid.Row="0" Style="{StaticResource CircularRadioButtonStyle}"
+                               
+                                 Command="{Binding MechaDeptCommand}"
+                                         Margin="20 10 20 10">
+                                <fa:ImageAwesome Icon="Wrench" Width="15" Height="15" Foreground="White"/>
+                            </RadioButton>
+
+
+                            <RadioButton IsChecked="{Binding IsCivilDept}" Grid.Column="4" Grid.Row="0" Style="{StaticResource CircularRadioButtonStyle}"
+                                
+                                 Command="{Binding CivilDeptCommand}"
+                                         Margin="20 10 20 10">
+                                <fa:ImageAwesome Icon="User" Width="15" Height="15" Foreground="White"/>
+                            </RadioButton>
+
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Electrical" Foreground="Black" VerticalAlignment="Center" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="Computer" Foreground="Black" VerticalAlignment="Center"  FontWeight="SemiBold" HorizontalAlignment="Center"/>
+                            <TextBlock Grid.Row="1" Grid.Column="2" Text="Marine" Foreground="Black" VerticalAlignment="Center" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+                            <TextBlock Grid.Row="1" Grid.Column="3" Text="Mechanical" Foreground="Black" VerticalAlignment="Center" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+                            <TextBlock Grid.Row="1" Grid.Column="4" Text="Civil" Foreground="Black" VerticalAlignment="Center" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+
+
+                        </Grid>
+                    </StackPanel>
+
+
+
+                    <Grid Grid.Column="1" Grid.Row="8" Margin="0 40 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Content="Cancel" Margin="0 0 10 0" Style="{StaticResource buttonMain}"  Command="{Binding SaveCommand}" Cursor="Hand"/>
+                        <Button Content="Save" Margin="10 0 0 0" Grid.Column="1" Style="{StaticResource buttonMainGreen}" Command="{Binding SaveCommand}" Cursor="Hand"/>
+
+                    </Grid>
+
+
+                </Grid>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>

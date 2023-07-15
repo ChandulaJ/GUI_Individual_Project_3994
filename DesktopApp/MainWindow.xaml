@@ -1,0 +1,285 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopApp" 
+        xmlns:viewmodel="clr-namespace:DesktopApp.MVVM.ViewModel"
+        
+        xmlns:fa="http://schemas.fontawesome.io/icons/" x:Class="DesktopApp.MainWindow"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="730" Width="1500"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+    Background ="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <viewmodel:MainViewModel/>
+    </Window.DataContext>
+
+
+    <!--Main window-->
+
+    <Border Background="#53b8e3" MouseDown="Border_MouseDown"
+            CornerRadius="20">
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="516"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel HorizontalAlignment="Right"
+                        Orientation="Horizontal">
+
+                    <!--Close Button-->
+                    
+                    <Button Width="20"
+                        Height="20"
+                        Content="✖"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Foreground="Gray"
+                        Margin="0 0 10 0"
+                        Click="Close_Button_Click"/>
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+
+                    <!--Student count at the top-->
+                    
+                    <Label Content="Total Number of Students : "
+                       HorizontalAlignment="Left"
+                       Margin="30,0,0,0"
+                       VerticalAlignment="Top"
+                       Foreground="Black"
+                       FontSize="20" FontFamily="Century Gothic" Height="30" />
+                    <Label Content="{Binding StudentData.Count}"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Foreground="Black"
+                       FontSize="20" FontFamily="Century Gothic" Height="30" >
+
+                </Label>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="1"
+                        Margin="10,10,10,10">
+
+                    <!--Top Headings-->
+                    
+                    <Border Width="1180"
+        Height="70"     
+        CornerRadius="10"
+        VerticalAlignment="Center">
+
+
+                        <Grid Background="#e2e5de">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition Width="88"/>
+                                <ColumnDefinition Width="55"/>
+                                <ColumnDefinition Width="116"/>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="146"/>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="205.2"/>
+                                <ColumnDefinition Width="151"/>
+                                <ColumnDefinition Width="90"/>
+                                <ColumnDefinition Width="126"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="Photo"
+                   FontSize="20"
+                    FontWeight="Bold"                                     
+                   Foreground="#181818"
+                   TextWrapping="WrapWithOverflow"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Height="30"
+                   Width="98"
+                    Grid.Column="0"
+                   VerticalAlignment="Center" FontFamily="Lucida Sans" />
+                            <TextBlock Text="Student ID"
+                   FontSize="20"
+                                       FontWeight="Bold"    
+                   Foreground="#181818"
+                   TextWrapping="WrapWithOverflow"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Height="58"
+                   Width="98"
+                   VerticalAlignment="Center"
+                   Grid.Column="1"
+                                   FontFamily="Lucida Sans"/>
+                            <TextBlock Text="First Name"
+                   FontSize="20"
+                                       FontWeight="Bold"    
+                   Foreground="#181818"
+                   TextWrapping="WrapWithOverflow"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Height="58"
+                   Width="98"
+                   VerticalAlignment="Center"
+                   Grid.Column="3" FontFamily="Lucida Sans"/>
+                            <TextBlock Text="Last Name"
+                   FontSize="20"
+                                       FontWeight="Bold"    
+                   Foreground="#181818"
+                   TextWrapping="WrapWithOverflow"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Height="58"
+                   Width="98"
+                   VerticalAlignment="Center"
+                   Grid.Column="5" Margin="28,0,0,0" FontFamily="Lucida Sans"/>
+                            <TextBlock Text="Date of Birth"
+                   FontSize="20"
+                                       FontWeight="Bold"    
+                   Foreground="#181818"
+                   TextWrapping="WrapWithOverflow"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Height="58"
+                   Width="98"
+                   VerticalAlignment="Center"
+                   Grid.Column="7" FontFamily="Lucida Sans" Margin="50,0,0,0"/>
+                            <TextBlock Text="Department"
+                   FontSize="20"
+                                       FontWeight="Bold"    
+                   Foreground="#181818"
+                   TextWrapping="WrapWithOverflow"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Height="30"
+                   Width="150"
+                   VerticalAlignment="Center"
+                   Grid.Column="8" FontFamily="Lucida Sans"/>
+                            <TextBlock Text="Year"
+                   FontSize="20"
+                                       FontWeight="Bold"    
+                   Foreground="#181818"
+                   TextWrapping="WrapWithOverflow"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Height="30"
+                   Width="98"
+                   VerticalAlignment="Center"
+                   Grid.Column="9" FontFamily="Lucida Sans"/>
+                            <TextBlock Text="GPA"
+                   FontSize="20"
+                                       FontWeight="Bold"    
+                   Foreground="#181818"
+                   TextWrapping="WrapWithOverflow"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Height="30"
+                   Width="98"
+                   VerticalAlignment="Center"
+                   Grid.Column="10" FontFamily="Lucida Sans"/>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+
+                <!--Student data-->
+
+                <StackPanel Grid.Row="2" Grid.Column="1"
+                        Margin="10,10,10,10">
+
+                    <Border Width="1180"
+        Height="475"
+        Background="#d4d4ce"
+        CornerRadius="10"
+        VerticalAlignment="Center">
+
+                        <ListView x:Name="studentListView"
+                              ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                              ScrollViewer.VerticalScrollBarVisibility="Auto"
+                              
+                                ItemsSource="{Binding StudentData}"
+                         SelectedIndex="{Binding SelectedIndex}"
+                              Background="Transparent"
+                              BorderThickness="0"
+                              ItemContainerStyle="{StaticResource StudentDataTheme}"
+                              />
+
+                    </Border>
+
+                    <Label Content=" * Select a student first to Edit or Delete"
+                       HorizontalAlignment="Left"
+                       Margin="30,0,0,0"
+                       VerticalAlignment="Top"
+                       Foreground="DarkBlue"
+                       FontSize="15" FontFamily="Times New Roman" Height="30" FontWeight="Bold"/>
+
+                </StackPanel>
+
+
+
+
+
+                <StackPanel Grid.Row="3" Grid.Column="1"
+                        Margin="10,10,10,10">
+
+                    <!--Bottom buttons-->
+
+                    <Border Width="1180"
+        Height="60"
+        Background="Transparent"
+        CornerRadius="10"
+        VerticalAlignment="Top">
+
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+
+                            <Button Content="Add Student" Style="{StaticResource buttonGreen}" Margin="10,0,0,0" Cursor="Hand" Command="{Binding AddStudentButtonCommand}"/>
+                            <Button Content="Edit Student" Style="{StaticResource buttonBlue}" Margin="300,0,0,0" Command="{Binding EditStudentCommand}" Cursor="Hand"/>
+                            <Button Content="Delete Student" Style="{StaticResource buttonRed}" Margin="320,0,0,0" Command="{Binding DeleteStudentCommand}" Cursor="Hand"/>
+
+
+
+
+                        </StackPanel>
+
+                    </Border>
+
+
+
+
+
+                </StackPanel>
+
+                <!--Right panel-->
+
+                <Border Grid.Column="0"
+
+                Padding="30"
+                CornerRadius="20 50 0 20" Margin="-300,0,1195,0" Grid.RowSpan="4" Background="#B2CACA">
+
+                    <StackPanel Margin="-30,-6,-30,0">
+                        <StackPanel Orientation="Horizontal" Background="#97a39a" Width="310" HorizontalAlignment="Center" Height="70" Margin="0 20 0 0">
+                            <TextBlock Text="Student Details" FontSize="20" Foreground="Black" FontWeight="DemiBold" Margin="40 20 60 20"/>
+                            <fa:ImageAwesome Icon="AngleRight" Width="25" Height="25" Foreground="#ffd500" Margin="3 0 0 0"/>
+                        </StackPanel>
+                        <Image Source="Images/logoBlack.png" Width="230" Height="230" Margin="0 350 0 0"/>
+
+                    </StackPanel>
+                </Border>
+
+
+            </Grid>
+        </Grid>
+
+    </Border>
+
+</Window>

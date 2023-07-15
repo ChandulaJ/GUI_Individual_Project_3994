@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="DesktopApp.MVVM.View.MyOption"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             mc:Ignorable="d" 
+             Name="myOption">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <RadioButton Style="{StaticResource CircularRadioButtonStyle}"
+                         Command="{Binding IconCommand, ElementName=myRadioButton}"
+                         CommandParameter="{Binding Parameter}">
+                <fa:ImageAwesome Icon="{Binding Path=Icon,ElementName=myRadioButton}" Width="15" Height="15" Foreground="White"/>
+            </RadioButton>
+            <TextBlock Text="{Binding Path=Text,ElementName=myRadioButton}" Foreground="#363636" VerticalAlignment="Center" Margin="10 0 20 0" FontWeight="SemiBold"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
