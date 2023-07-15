@@ -126,7 +126,7 @@ namespace DesktopApp.MVVM.ViewModel
             dataFormViewModel.HintIdIn = "ID";
             dataFormViewModel.HintFirstNameIn = "First Name";
             dataFormViewModel.HintLastNameIn = "Last Name";
-            dataFormViewModel.HintDOBIn = "Date of Birth";
+            dataFormViewModel.HintDOBIn = "Date of Birth \"mm/dd/yyyy\"";
             dataFormViewModel.HintYearIn = "Year";
             dataFormViewModel.HintGPAIn = "GPA";
 

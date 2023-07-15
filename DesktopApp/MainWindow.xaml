@@ -43,7 +43,7 @@
                         Orientation="Horizontal">
 
                     <!--Close Button-->
-                    
+
                     <Button Width="20"
                         Height="20"
                         Content="✖"
@@ -57,7 +57,7 @@
                 <StackPanel Orientation="Horizontal">
 
                     <!--Student count at the top-->
-                    
+
                     <Label Content="Total Number of Students : "
                        HorizontalAlignment="Left"
                        Margin="30,0,0,0"
@@ -70,13 +70,13 @@
                        Foreground="Black"
                        FontSize="20" FontFamily="Century Gothic" Height="30" >
 
-                </Label>
+                    </Label>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="1"
                         Margin="10,10,10,10">
 
                     <!--Top Headings-->
-                    
+
                     <Border Width="1180"
         Height="70"     
         CornerRadius="10"
@@ -109,9 +109,10 @@
                    Width="98"
                     Grid.Column="0"
                    VerticalAlignment="Center" FontFamily="Lucida Sans" />
+
                             <TextBlock Text="Student ID"
                    FontSize="20"
-                                       FontWeight="Bold"    
+                   FontWeight="Bold"    
                    Foreground="#181818"
                    TextWrapping="WrapWithOverflow"
                    TextAlignment="Center"
@@ -120,10 +121,11 @@
                    Width="98"
                    VerticalAlignment="Center"
                    Grid.Column="1"
-                                   FontFamily="Lucida Sans"/>
+                   FontFamily="Lucida Sans"/>
+
                             <TextBlock Text="First Name"
                    FontSize="20"
-                                       FontWeight="Bold"    
+                   FontWeight="Bold"    
                    Foreground="#181818"
                    TextWrapping="WrapWithOverflow"
                    TextAlignment="Center"
@@ -132,9 +134,10 @@
                    Width="98"
                    VerticalAlignment="Center"
                    Grid.Column="3" FontFamily="Lucida Sans"/>
+
                             <TextBlock Text="Last Name"
                    FontSize="20"
-                                       FontWeight="Bold"    
+                   FontWeight="Bold"    
                    Foreground="#181818"
                    TextWrapping="WrapWithOverflow"
                    TextAlignment="Center"
@@ -143,20 +146,22 @@
                    Width="98"
                    VerticalAlignment="Center"
                    Grid.Column="5" Margin="28,0,0,0" FontFamily="Lucida Sans"/>
-                            <TextBlock Text="Date of Birth"
-                   FontSize="20"
-                                       FontWeight="Bold"    
+
+                            <TextBlock Text="Date of Birth (mm/dd/yyyy)"
+                   FontSize="16"
+                   FontWeight="Bold"    
                    Foreground="#181818"
                    TextWrapping="WrapWithOverflow"
                    TextAlignment="Center"
-                   HorizontalAlignment="Left"
-                   Height="58"
-                   Width="98"
+                   HorizontalAlignment="Center"
+                   Height="50"
+                   Width="123"
                    VerticalAlignment="Center"
-                   Grid.Column="7" FontFamily="Lucida Sans" Margin="50,0,0,0"/>
+                   Grid.Column="7" FontFamily="Lucida Sans"/>
+
                             <TextBlock Text="Department"
                    FontSize="20"
-                                       FontWeight="Bold"    
+                   FontWeight="Bold"    
                    Foreground="#181818"
                    TextWrapping="WrapWithOverflow"
                    TextAlignment="Center"
@@ -165,9 +170,10 @@
                    Width="150"
                    VerticalAlignment="Center"
                    Grid.Column="8" FontFamily="Lucida Sans"/>
+
                             <TextBlock Text="Year"
                    FontSize="20"
-                                       FontWeight="Bold"    
+                   FontWeight="Bold"    
                    Foreground="#181818"
                    TextWrapping="WrapWithOverflow"
                    TextAlignment="Center"
@@ -176,9 +182,10 @@
                    Width="98"
                    VerticalAlignment="Center"
                    Grid.Column="9" FontFamily="Lucida Sans"/>
+
                             <TextBlock Text="GPA"
                    FontSize="20"
-                                       FontWeight="Bold"    
+                   FontWeight="Bold"    
                    Foreground="#181818"
                    TextWrapping="WrapWithOverflow"
                    TextAlignment="Center"
@@ -187,6 +194,7 @@
                    Width="98"
                    VerticalAlignment="Center"
                    Grid.Column="10" FontFamily="Lucida Sans"/>
+
                         </Grid>
                     </Border>
                 </StackPanel>

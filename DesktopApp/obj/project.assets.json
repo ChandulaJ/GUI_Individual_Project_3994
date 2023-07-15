@@ -1723,11 +1723,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Git collaborate\\GUIProjectConverted\\DesktopApp\\DesktopApp.csproj",
+      "projectUniqueName": "D:\\Git collaborate\\GUI_Individual_Project_3994\\DesktopApp\\DesktopApp.csproj",
       "projectName": "DesktopApp",
-      "projectPath": "D:\\Git collaborate\\GUIProjectConverted\\DesktopApp\\DesktopApp.csproj",
+      "projectPath": "D:\\Git collaborate\\GUI_Individual_Project_3994\\DesktopApp\\DesktopApp.csproj",
       "packagesPath": "C:\\Users\\Chandula\\.nuget\\packages\\",
-      "outputPath": "D:\\Git collaborate\\GUIProjectConverted\\DesktopApp\\obj\\",
+      "outputPath": "D:\\Git collaborate\\GUI_Individual_Project_3994\\DesktopApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Chandula\\AppData\\Roaming\\NuGet\\NuGet.Config",

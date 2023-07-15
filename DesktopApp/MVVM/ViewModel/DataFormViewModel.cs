@@ -158,6 +158,7 @@ namespace DesktopApp.MVVM.ViewModel
                 }
             }
         }
+    
         private string _dob;
         public string DOBIn
         {
@@ -166,11 +167,24 @@ namespace DesktopApp.MVVM.ViewModel
             {
                 if (_dob != value)
                 {
-                    _dob = value;
-                    OnPropertyChanged(nameof(DOBIn));
+                    // Validate the input as a date
+                    DateTime result;
+                    bool isValidDate = DateTime.TryParse(value, out result);
+
+                    if (isValidDate)
+                    {
+                        _dob = value;
+                        OnPropertyChanged(nameof(DOBIn));
+                    }
+                    else
+                    {
+                      
+                    }
                 }
             }
         }
+
+
 
 
         private string _year;
@@ -181,11 +195,24 @@ namespace DesktopApp.MVVM.ViewModel
             {
                 if (_year != value)
                 {
-                    _year = value;
-                    OnPropertyChanged(nameof(YearIn));
+                    // Validate the input as a year
+                    int year;
+                    bool isValidYear = int.TryParse(value, out year);
+
+                    if (isValidYear && year >= 0)
+                    {
+                        _year = value;
+                        OnPropertyChanged(nameof(YearIn));
+                    }
+                    else
+                    {
+                        // Show an error dialog box
+                        MessageBox.Show("Invalid year input", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
             }
         }
+
 
 
         private string _gpa;
@@ -196,12 +223,23 @@ namespace DesktopApp.MVVM.ViewModel
             {
                 if (_gpa != value)
                 {
-                    _gpa = value;
-                    OnPropertyChanged(nameof(GPAIn));
+                    // Validate the input as a double
+                    double result;
+                    bool isValidGPA = double.TryParse(value, out result);
+
+                    if (isValidGPA)
+                    {
+                        _gpa = value;
+                        OnPropertyChanged(nameof(GPAIn));
+                    }
+                    else
+                    {
+                        // Show an error dialog box
+                        MessageBox.Show("Invalid GPA input", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
             }
         }
-
 
         private string _id;
         public string IdIn
@@ -211,11 +249,26 @@ namespace DesktopApp.MVVM.ViewModel
             {
                 if (_id != value)
                 {
-                    _id = value;
-                    OnPropertyChanged(nameof(IdIn));
+                    // Validate the input as a id
+                    int id;
+                    bool isValidId = int.TryParse(value, out id);
+
+                    if (isValidId && id >= 0)
+                    {
+                        _id = value;
+                        OnPropertyChanged(nameof(IdIn));
+                    }
+                    else
+                    {
+                        // Show an error dialog box
+                        MessageBox.Show("Invalid id input", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
             }
         }
+
+       
+  
 
         private string _dept;
         public string DeptIn

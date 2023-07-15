@@ -89,6 +89,7 @@
 
 
 
+                    <uc:MyTextBox x:Name="IdInput" Grid.Column="1" Grid.Row="0" HintText="{Binding HintIdIn, Mode=TwoWay}" Text="{Binding IdIn, Mode=TwoWay}"/>
 
                     <uc:MyTextBox x:Name="fnameInput" Grid.Column="1" Grid.Row="1" HintText="{Binding HintFirstNameIn, Mode=TwoWay}" Text="{Binding FirstNameIn, Mode=TwoWay}"/>
                     <uc:MyTextBox x:Name="lnameInput" Grid.Column="1" Grid.Row="2" HintText="{Binding HintLastNameIn, Mode=TwoWay}" Text="{Binding LastNameIn, Mode=TwoWay}"/>
