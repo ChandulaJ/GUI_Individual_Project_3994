@@ -37,6 +37,8 @@ namespace DesktopApp.MVVM.ViewModel
 
             
             dataFormWindow = new DataFormWindow();
+
+            //Getting path for the images
         
             string imagePath1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Replace(@"\bin\Debug\net7.0-windows", ""), "Images", "1.png");
             string finalimagepath1 = imagePath1.Replace('\\', '/');

@@ -145,20 +145,20 @@ namespace DesktopApp.MVVM.ViewModel
         }
 
 
-        private string _LastName;
+        private string _lastName;
         public string LastNameIn
         {
-            get { return _LastName; }
+            get { return _lastName; }
             set
             {
-                if (_LastName != value)
+                if (_lastName != value)
                 {
-                    _LastName = value;
+                    _lastName = value;
                     OnPropertyChanged(nameof(LastNameIn));
                 }
             }
         }
-    
+
         private string _dob;
         public string DOBIn
         {
@@ -167,6 +167,13 @@ namespace DesktopApp.MVVM.ViewModel
             {
                 if (_dob != value)
                 {
+                    if (string.IsNullOrWhiteSpace(value))
+                    {
+                        _dob = value;
+                        OnPropertyChanged(nameof(DOBIn));
+                        return;
+                    }
+
                     // Validate the input as a date
                     DateTime result;
                     bool isValidDate = DateTime.TryParse(value, out result);
@@ -178,11 +185,15 @@ namespace DesktopApp.MVVM.ViewModel
                     }
                     else
                     {
-                      
+                        Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+                        {
+                            MessageBox.Show("Date should be in the format \"mm/dd/yyyy\"", "Invalid Date input", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }));
                     }
                 }
             }
         }
+
 
 
 
@@ -207,7 +218,7 @@ namespace DesktopApp.MVVM.ViewModel
                     else
                     {
                         // Show an error dialog box
-                        MessageBox.Show("Invalid year input", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("Year can only contain numbers","Invalid year input", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
             }
@@ -235,7 +246,7 @@ namespace DesktopApp.MVVM.ViewModel
                     else
                     {
                         // Show an error dialog box
-                        MessageBox.Show("Invalid GPA input", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("GPA can only contain numbers","Invalid GPA input",  MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
             }
@@ -261,7 +272,7 @@ namespace DesktopApp.MVVM.ViewModel
                     else
                     {
                         // Show an error dialog box
-                        MessageBox.Show("Invalid id input", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("Id can only contain numbers",  "Invalid id input",  MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
             }
